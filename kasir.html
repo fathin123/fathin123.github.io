@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aturan Harga</title>
+    <link rel="stylesheet" href="admin/assets/css/bootstrap.css">
+</head>
+<body>
+    <nav class="navbar navbar" role=navigation>
+        <div class=container>
+            <ul class="nav navbar-nav">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="biodata.html">Biodata</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="aturan.html">Aturan Harga</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br>
+    <br><br><br>
+	<script type="text/javascript">
+  function total() {
+   var nama = document.getElementById('nama').value;
+   var harga =  parseInt(document.getElementById('harga').value);
+   var jumlah_beli =  parseInt(document.getElementById('jumlah').value);
+   var pembayaran =  parseInt(document.getElementById('bayar').value);
+   
+    if (k = member){
+    if(jumlah_beli > 3){
+        var diskon = (10/100) * harga ;
+        var harga_beli = (harga - diskon) * jumlah_beli;
+         document.getElementById('total').value = harga_beli;
+     }
+     else if(jumlah_beli >= 2){
+        var diskon = (7/100) * harga ;
+        var harga_beli = (harga - diskon) * jumlah_beli;
+         document.getElementById('total').value = harga_beli;
+     }else if(jumlah_beli == 1 ){
+        var diskon = (5/100) * harga ;
+        var harga_beli = (harga - diskon) * jumlah_beli;
+         document.getElementById('total').value = harga_beli;
+    }
+}else if (k = member){
+    
+    if(jumlah_beli > 5){
+        var diskon = (5/100) * harga ;
+        var harga_beli = (harga - diskon) * jumlah_beli;
+         document.getElementById('total').value = harga_beli;
+     }
+     else if(jumlah_beli > 3){
+        var diskon = jumlah_beli * harga ;
+        var harga_beli = diskon * (5/100);
+        var a = diskon - harga_beli;
+         document.getElementById('total').value = harga_beli;
+     }else if(jumlah_beli ==1 ){
+        var diskon = (5/100) * harga ;
+        var harga_beli = (harga - diskon) * jumlah_beli;
+         document.getElementById('total').value = harga_beli;
+    }
+}
+}
+  </script>
+ <style>
+  .tengah{
+            background-position:center;
+            width:auto;
+            height:auto;
+        }
+  table{
+    padding-top: 150px;
+   margin:auto;
+  }
+ </style>
+</head>
+<body class="tengah">
+    <div>
+  <table>
+   <tr>     
+    <th align="left">ID Pembeli</th>
+    <th><input type="text"  id="nama" onchange="total()" ></th>
+   </tr>
+
+   <tr>    
+    <th align="left">Nama Pembeli</th>
+    <th><input type="text"  id="nama" onchange="total()" ></th>
+   </tr>
+
+   <tr>    
+    <th align="left">Jenis Makanan</th>
+    <th align="left"><td><select id="status" onchange="total()">
+            <option>Nasi Goreng Rp.12000</option>
+            <option>Ayam Bakar Rp.25000</option>
+            <option>Sukiyaki Rp.40000</option>
+            <option>Yakiniku Rp.80000</option>
+    </select></th>
+   </tr>
+   
+   <tr>    
+    <th align="left">Harga</th>
+    <th><input type="number"  id="harga" onchange="total()"></th>
+   </tr>
+
+   <tr>    
+    <th align="left">Jumlah Pembelian</th>    
+    <th><input type="number" id="jumlah"  value="0" onchange="total()"></th>
+   </tr>
+   <th align="left" id ="k">Status Pembeli</th>    
+    <th align="left"><input type="radio" id="member"  value="0" onchange="total()">Member</th>
+    <th align="left"><input type="radio" id="nonmember"  value="0" onchange="total()">Non Member</th>
+   </tr>
+
+   <tr>    
+    <th align="left">Bayar</th>
+    <th><input type="text" style="background: #F5F5DC" id="total" disabled ></th>
+   </tr>
+
+   <tr>    
+    <th align="left"></th>    
+    <th><input type="number" id="bayar" onchange="total()"></th>
+   </tr>
+  </table>
+   </div>
+
+   <br><br><br>
+  <center><a href="profil.html">Halaman Sebelumnya <<< </a><center>
+</body>
+</html>
